@@ -18,6 +18,7 @@ day=[]
 des=[]
 link=[]
 cover=[]
+image=[]
 def get_inf():
     global title
     global authors
@@ -64,13 +65,26 @@ def get_inf():
             cover.insert(0,thumb)
     # print(title, authors, day, link, des)
 def get_contents(links):
+    global image
     data=requests.get(links,headers=headers)
     bs=BeautifulSoup(data.text,"html.parser")
     tweet =bs.find('div', class_="btnTweet")
     if tweet:
         bs.find('div', class_="btnTweet").decompose()
     blog_contents=bs.find('div',class_="blog_detail__main")
-    return blog_contents.text
+    img =blog_contents.find_all('img')
+    if img:
+        for i in img:
+            image.insert(0,"https://blog.nanabunnonijyuuni.com"+i["src"])
+        filename = os.path.basename(image[0])
+        pre=image[0].replace("https://blog.nanabunnonijyuuni.com","")
+        pre=pre.replace(filename,"")
+        blog_contents=str(blog_contents).replace("</img>"," ")
+        blog_contents=blog_contents.replace('<img src="'+pre,"![](https://files.zzzhxxx.top/img/")
+        tr=BeautifulSoup(blog_contents,"html.parser")
+        return tr.text.replace('">',")")
+    else:
+        return blog_contents.text
 def get_img(i):
     filename = os.path.basename(i)
     request=urllib.request.Request(i,headers=headers)
@@ -82,21 +96,22 @@ def get_link(links):
     l= "https://files.zzzhxxx.top/img/" + filename
     return l
 if __name__ == "__main__":
-   for i in range(2):
-       page=i
-       get_inf()
-       for j in range(len(title)):
-           with open(os.getcwd()+"/uta/"+"uta"+day[j]+".md","w",encoding='utf-8') as f:
-               f.write("---\n")
-               f.write("title: "+title[j]+"\n")
-               f.write("date: "+day[j]+"\n")
-               f.write("tags: "+authors[j]+"\n")
-               f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
-               f.write("description: "+des[j]+"\n")
-               if cover[j] != " ":
-                    f.write("cover: "+get_link(cover[j])+"\n")
-               f.write("---\n")
-               f.write(get_contents(link[j])) 
-
+    for i in range(2):
+        page=i
+        get_inf()
+        for j in range(len(title)):
+            with open(os.getcwd()+"/uta/"+"uta"+day[j]+".md","w",encoding='utf-8') as f:
+                f.write("---\n")
+                f.write("title: "+title[j]+"\n")
+                f.write("date: "+day[j]+"\n")
+                f.write("tags: "+authors[j]+"\n")
+                f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
+                f.write("description: "+des[j]+"\n")
+                if cover[j] != " ":
+                        f.write("cover: "+get_link(cover[j])+"\n")
+                f.write("---\n")
+                f.write(get_contents(link[j])) 
+    for i in image:
+        get_img(i)
                
 
