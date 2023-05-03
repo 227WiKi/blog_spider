@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import hashlib
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
 url_base="https://blog.nanabunnonijyuuni.com/s/n227/diary/blog/list?ima=5649&page="
-suffix="&ct=01&cd=blog"
+suffix="&ct=04&cd=blog"
 page=0
 url=url_base+str(page)
 a=[]
@@ -67,10 +67,14 @@ def get_inf():
     # print(title, authors, day, link, des)
 def get_img(i):
     filename = os.path.basename(i)
-    request=urllib.request.Request(i,headers=headers)
-    response=urllib.request.urlopen(request)
-    with open(os.getcwd()+"/sally/images/"+filename, "wb+") as f:
-        f.write(response.read())
+    print(i)
+    try:
+        request=urllib.request.Request(i,headers=headers)
+        response=urllib.request.urlopen(request)
+        with open(os.getcwd()+"/nagomi/images/"+filename, "wb+") as f:
+            f.write(response.read())
+    except:
+        pass
 def get_contents(links):
     global image
     data=requests.get(links,headers=headers)
@@ -80,52 +84,40 @@ def get_contents(links):
         bs.find('div', class_="btnTweet").decompose()
     blog_contents=bs.find('div',class_="blog_detail__main")
     img =blog_contents.find_all('img')
-    re=''
     if img:
         for i in img:
-            try:
-                l="https://blog.nanabunnonijyuuni.com"+i["src"]
-                get_img(l)
-                re+="![](https://files.zzzhxxx.top/img/"+os.path.basename(l)+")\n"
-                print(l)
-            except: 
-                pass
-    #     pre=image[0].replace("https://blog.nanabunnonijyuuni.com","")
-    #     pre=pre.replace(filename,"")
-        blog_contents=str(blog_contents).replace("</div>","\n")
-        blog_contents=str(blog_contents).replace('<div dir="auto">',"")
-        blog_contents=str(blog_contents).replace('<div>',"")
-    #     blog_contents=blog_contents.replace('<img src="'+pre,"![](https://files.zzzhxxx.top/img/")
+            l='https://blog.nanabunnonijyuuni.com'+i["src"]
+            get_img(l)
+        blog_contents=str(blog_contents).replace("</img>"," ")
         tr=BeautifulSoup(blog_contents,"html.parser")
-        
-        return re+tr.text
+        return tr.text.replace('">',")")
     else:
         return blog_contents.text
 
 def get_link(links):
     filename = os.path.basename(links)
-    l= "https://files.zzzhxxx.top/img/" + filename
+    l= 'https://files.zzzhxxx.top/img/' + filename
     return l
 if __name__ == "__main__":
-    # for i in range(14):
-    page=13
-    get_inf()
-    for j in range(len(title)):
-        name="sally-"+day[j]+'-'+title[j]
-        md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
-        with open(os.getcwd()+"/sally/"+md+".md"  ,"w",encoding='utf-8') as f:
-            f.write("---\n")
-            f.write("title: "+title[j]+"\n")
-            f.write("date: "+day[j]+"\n")
-            f.write("tags: "+authors[j]+"\n")
-            f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
-            f.write("description: "+des[j].replace(":","：")+"\n")
-            if cover[j] != " ":
-                    f.write("cover: "+get_link(cover[j])+"\n")
-            f.write("---\n")
-            f.write(get_contents(link[j])) 
+    for i in range(31):
+        page=i
+        get_inf()
+        for j in range(len(title)):
+            name="nagomi-"+day[j]+'-'+title[j]
+            md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
+            with open(os.getcwd()+"/nagomi/"+md+".md","w",encoding='utf-8') as f:
+                f.write("---\n")
+                f.write("title: "+title[j]+"\n")
+                f.write("date: "+day[j]+"\n")
+                f.write("tags: "+authors[j]+"\n")
+                f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
+                f.write("description: "+des[j]+"\n")
+                if cover[j] != " ":
+                        f.write("cover: "+get_link(cover[j])+"\n")
+                f.write("---\n")
+                f.write(get_contents(link[j])) 
     for i in cover:
         if i !=' ':
             get_img(i)
-               
+             
 
