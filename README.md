@@ -35,7 +35,7 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 # Usage
 create the folder named by members' names and a folder called images inside it.
 
-``python -m [replace with member's name]_spider.py``
+``python -m spider_[replace with member's name].py``
 
 > You may need to change the number of pages the program crawls at a time, which may cause the program to crash.
 
