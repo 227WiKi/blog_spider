@@ -18,7 +18,7 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 - [x] 宮瀬玲奈
 - [x] 西條和
 - [ ] 白沢かなえ
-- [ ] 涼花萌
+- [x] 涼花萌
 - [ ] 相川奈央
 - [ ] 麻丘真央
 - [ ] 雨夜音
