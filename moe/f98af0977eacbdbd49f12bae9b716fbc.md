@@ -23,7 +23,7 @@ cover: https://files.zzzhxxx.top/img/36e9c437eb078be18382f3bd39eb6.jpg
 
 
 今日のくらてん！にゲストとして呼んでもらって〜〜ん📻💓
-
+![](https://files.zzzhxxx.top/img/36e9c437eb078be18382f3bd39eb6.jpg)
 
 
 
@@ -103,7 +103,7 @@ cover: https://files.zzzhxxx.top/img/36e9c437eb078be18382f3bd39eb6.jpg
 
 
 
-
+![](https://files.zzzhxxx.top/img/36e9c437eb078be18382f3bd39eb6-01.jpg)
 
 
 

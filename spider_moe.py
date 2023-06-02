@@ -88,9 +88,10 @@ def get_contents(links):
         for i in img:
             l='https://blog.nanabunnonijyuuni.com'+i["src"]
             get_img(l)
-        blog_contents=str(blog_contents).replace("</img>"," ")
+            blog_contents=str(blog_contents).replace("</img>"," ")
+            blog_contents=blog_contents.replace('<img src="' + i["src"] + '">',"![]("+get_link(l)+')')
         tr=BeautifulSoup(blog_contents,"html.parser")
-        return tr.text.replace('">',")")
+        return tr.text
     else:
         return blog_contents.text
 
@@ -99,8 +100,9 @@ def get_link(links):
     l= 'https://files.zzzhxxx.top/img/' + filename
     return l
 if __name__ == "__main__":
-    for i in range(12):
-        page=i+8
+    get_contents("https://blog.nanabunnonijyuuni.com/s/n227/diary/detail/2231?ima=2129&cd=blog")
+    for i in range(1):
+        page=i
         get_inf()
         for j in range(len(title)):
             name="moe-"+day[j]+'-'+title[j]
@@ -116,8 +118,8 @@ if __name__ == "__main__":
                         f.write("cover: "+get_link(cover[j])+"\n")
                 f.write("---\n")
                 f.write(get_contents(link[j])) 
-    for i in cover:
-        if i !=' ':
-            get_img(i)
+    # for i in cover:
+    #     if i !=' ':
+    #         get_img(i)
              
 

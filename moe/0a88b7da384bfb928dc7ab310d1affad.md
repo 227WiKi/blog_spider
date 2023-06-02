@@ -105,7 +105,7 @@ showroom配信見てくださったみなさん！
 
 
 リップはな〜〜
-
+![](https://files.zzzhxxx.top/img/ffc4353791fad247d644753654570.jpg)
 
 
 
@@ -149,7 +149,7 @@ showroom配信見てくださったみなさん！
 
 
 仕上げにほとんどのメンバーが持ってるこれ！
-
+![](https://files.zzzhxxx.top/img/ffc4353791fad247d644753654570-01.jpg)
 
 
 
@@ -205,7 +205,7 @@ showroom配信見てくださったみなさん！
 
 
 
-
+![](https://files.zzzhxxx.top/img/ffc4353791fad247d644753654570-02.jpg)
 
 
 
@@ -231,7 +231,7 @@ showroom配信見てくださったみなさん！
 
 
 大好きなこのアイス食べる〜〜🍦
-
+![](https://files.zzzhxxx.top/img/ffc4353791fad247d644753654570-03.jpg)
 
 
 
@@ -262,7 +262,7 @@ showroom配信見てくださったみなさん！
 
 
 
-
+![](https://files.zzzhxxx.top/img/ffc4353791fad247d644753654570-04.jpg)
 
 
 (左から、サリたん、萌、ちぱるん、みずはん)
