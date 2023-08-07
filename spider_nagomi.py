@@ -87,7 +87,7 @@ def get_contents(links):
     if img:
         for i in img:
             l='https://blog.nanabunnonijyuuni.com'+i["src"]
-            # get_img(l)
+            get_img(l)
             blog_contents=str(blog_contents).replace("</img>"," ")
             blog_contents=blog_contents.replace('<img src="' + i["src"] + '">',"![]("+get_link(l)+')')
         tr=BeautifulSoup(blog_contents,"html.parser")
