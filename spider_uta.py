@@ -5,6 +5,7 @@ import os
 import time
 import urllib
 from bs4 import BeautifulSoup
+import hashlib
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
 url_base="https://blog.nanabunnonijyuuni.com/s/n227/diary/blog/list?ima=5649&page="
 suffix="&ct=12&cd=blog"
@@ -64,6 +65,16 @@ def get_inf():
             thumb =thumb.replace(");"," ")
             cover.insert(0,thumb)
     # print(title, authors, day, link, des)
+def get_img(i):
+    filename = os.path.basename(i)
+    print(i)
+    try:
+        request=urllib.request.Request(i,headers=headers)
+        response=urllib.request.urlopen(request)
+        with open(os.getcwd()+"/uta/images/"+filename, "wb+") as f:
+            f.write(response.read())
+    except:
+        pass
 def get_contents(links):
     global image
     data=requests.get(links,headers=headers)
@@ -75,32 +86,27 @@ def get_contents(links):
     img =blog_contents.find_all('img')
     if img:
         for i in img:
-            image.insert(0,"https://blog.nanabunnonijyuuni.com"+i["src"])
-        filename = os.path.basename(image[0])
-        pre=image[0].replace("https://blog.nanabunnonijyuuni.com","")
-        pre=pre.replace(filename,"")
-        blog_contents=str(blog_contents).replace("</img>"," ")
-        blog_contents=blog_contents.replace('<img src="'+pre,"![](https://files.zzzhxxx.top/img/")
+            l='https://blog.nanabunnonijyuuni.com'+i["src"]
+            # get_img(l)
+            blog_contents=str(blog_contents).replace("</img>"," ")
+            blog_contents=blog_contents.replace('<img src="' + i["src"] + '">',"![]("+get_link(l)+')')
         tr=BeautifulSoup(blog_contents,"html.parser")
-        return tr.text.replace('">',")")
+        return tr.text
     else:
         return blog_contents.text
-def get_img(i):
-    filename = os.path.basename(i)
-    request=urllib.request.Request(i,headers=headers)
-    response=urllib.request.urlopen(request)
-    with open(os.getcwd()+"/uta/images/"+filename, "wb+") as f:
-        f.write(response.read())
+
 def get_link(links):
     filename = os.path.basename(links)
-    l= "https://files.zzzhxxx.top/img/" + filename
+    l= 'https://files.zzzhxxx.top/img/' + filename
     return l
 if __name__ == "__main__":
-    for i in range(2):
+    for i in range(1):
         page=i
         get_inf()
         for j in range(len(title)):
-            with open(os.getcwd()+"/uta/"+"uta"+day[j]+".md","w",encoding='utf-8') as f:
+            name="uta-"+day[j]+'-'+title[j]
+            md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
+            with open(os.getcwd()+"/uta/"+md+".md","w",encoding='utf-8') as f:
                 f.write("---\n")
                 f.write("title: "+title[j]+"\n")
                 f.write("date: "+day[j]+"\n")
@@ -111,7 +117,8 @@ if __name__ == "__main__":
                         f.write("cover: "+get_link(cover[j])+"\n")
                 f.write("---\n")
                 f.write(get_contents(link[j])) 
-    for i in image:
-        get_img(i)
-               
+    for i in cover:
+        if i !=' ':
+            get_img(i)
+             
 

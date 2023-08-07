@@ -117,8 +117,8 @@ if __name__ == "__main__":
                         f.write("cover: "+get_link(cover[j])+"\n")
                 f.write("---\n")
                 f.write(get_contents(link[j])) 
-    # for i in cover:
-    #     if i !=' ':
-    #         get_img(i)
+    for i in cover:
+        if i !=' ':
+            get_img(i)
              
 

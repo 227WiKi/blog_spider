@@ -100,7 +100,6 @@ def get_link(links):
     l= 'https://files.zzzhxxx.top/img/' + filename
     return l
 if __name__ == "__main__":
-    get_contents("https://blog.nanabunnonijyuuni.com/s/n227/diary/detail/2231?ima=2129&cd=blog")
     for i in range(1):
         page=i
         get_inf()
