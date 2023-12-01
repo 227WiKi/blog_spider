@@ -19,10 +19,10 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 - [x] 西條和
 - [x] 白沢かなえ
 - [x] 涼花萌
+- [x] 雨夜音
+- [x] 清井美那
 - [ ] 相川奈央
 - [ ] 麻丘真央
-- [ ] 雨夜音
-- [ ] 清井美那
 - [ ] 椎名桜月
 - [ ] 四条月
 - [ ] 月城咲舞
