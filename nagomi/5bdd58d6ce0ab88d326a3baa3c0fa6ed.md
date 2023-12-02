@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 秋服が着たいしかしいやまだだと、どこかの力によって引き止められる...
-cover: https://files.zzzhxxx.top/img/4e845e405fabb68a90df924e8610e.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/4e845e405fabb68a90df924e8610e.jpg 
 ---
 
 
@@ -258,7 +258,7 @@ cover: https://files.zzzhxxx.top/img/4e845e405fabb68a90df924e8610e.jpg
 ふぁい。
 
 
-![](https://files.zzzhxxx.top/img/4e845e405fabb68a90df924e8610e.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/4e845e405fabb68a90df924e8610e.jpg)
 
 
 

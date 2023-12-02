@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: きーっくっシャンプーの匂いがしたオリコンウィークリーチャート8位となったそうです！...
-cover: https://files.zzzhxxx.top/img/a0a6ea481da85f6f2435821e7c143.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a0a6ea481da85f6f2435821e7c143.jpg 
 ---
 
 
@@ -379,7 +379,7 @@ cover: https://files.zzzhxxx.top/img/a0a6ea481da85f6f2435821e7c143.jpg
 ふぁい
 
 
-![](https://files.zzzhxxx.top/img/a0a6ea481da85f6f2435821e7c143.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a0a6ea481da85f6f2435821e7c143.jpg)
 
 
 

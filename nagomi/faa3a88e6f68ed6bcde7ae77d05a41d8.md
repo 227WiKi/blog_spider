@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: ブーム最近、私の中でシャンプーの匂いがしたのブームが巻き起こってますレコーディングした時より明らかに...
-cover: https://files.zzzhxxx.top/img/e3e7b40fdce4b1c2ff858e08714d2.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3e7b40fdce4b1c2ff858e08714d2.jpg 
 ---
 
 
@@ -218,7 +218,7 @@ cover: https://files.zzzhxxx.top/img/e3e7b40fdce4b1c2ff858e08714d2.jpg
 
 ふぁい
 
-![](https://files.zzzhxxx.top/img/e3e7b40fdce4b1c2ff858e08714d2.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3e7b40fdce4b1c2ff858e08714d2.jpg)
 
 
 
@@ -400,7 +400,7 @@ cover: https://files.zzzhxxx.top/img/e3e7b40fdce4b1c2ff858e08714d2.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/e3e7b40fdce4b1c2ff858e08714d2-01.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3e7b40fdce4b1c2ff858e08714d2-01.jpg)
 
 
 

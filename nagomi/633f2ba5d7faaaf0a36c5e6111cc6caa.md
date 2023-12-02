@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 突然ですが1年前の今日、みなさんなにをしてたか覚えてますか？私は1年前の今日、振り付け動画の撮影...
-cover: https://files.zzzhxxx.top/img/1839a2a54577b90953276e1336e6b.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/1839a2a54577b90953276e1336e6b.jpg 
 ---
 
 
@@ -281,7 +281,7 @@ cover: https://files.zzzhxxx.top/img/1839a2a54577b90953276e1336e6b.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/1839a2a54577b90953276e1336e6b.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/1839a2a54577b90953276e1336e6b.jpg)
 
 
 

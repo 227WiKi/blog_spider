@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: とことことてとてガチャ。おわった〜Missio...
-cover: https://files.zzzhxxx.top/img/7f995bc01a6d5ea6c3d7550bf6796.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7f995bc01a6d5ea6c3d7550bf6796.jpg 
 ---
 
         ﻿
@@ -495,7 +495,7 @@ Mission Paradise 、延期になった上で1月11日になりましたが
 
 ぽいっ
 
-![](https://files.zzzhxxx.top/img/7f995bc01a6d5ea6c3d7550bf6796.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7f995bc01a6d5ea6c3d7550bf6796.jpg)
 
 
 

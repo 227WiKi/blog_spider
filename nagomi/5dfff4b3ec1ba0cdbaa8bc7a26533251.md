@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 電車の中響く着信音。立ってる人、座ってる人その車両にいる人それぞれが自分のかな、...
-cover: https://files.zzzhxxx.top/img/6e92e2c9ed876277b43e607ed4977.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/6e92e2c9ed876277b43e607ed4977.jpg 
 ---
 
 
@@ -124,7 +124,7 @@ cover: https://files.zzzhxxx.top/img/6e92e2c9ed876277b43e607ed4977.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/6e92e2c9ed876277b43e607ed4977.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/6e92e2c9ed876277b43e607ed4977.jpg)
 
 
 

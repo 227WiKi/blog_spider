@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: ふぁいさふぉいさ実はお姉ちゃんやらお母さんに連れられてナナブンノニジュウニブースにちょくちょくお邪魔しておりましたお店で...
-cover: https://files.zzzhxxx.top/img/586c1c0fe0c52d9a4678495c45177.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/586c1c0fe0c52d9a4678495c45177.jpg 
 ---
 
 
@@ -20,7 +20,7 @@ cover: https://files.zzzhxxx.top/img/586c1c0fe0c52d9a4678495c45177.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/586c1c0fe0c52d9a4678495c45177.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/586c1c0fe0c52d9a4678495c45177.jpg)
 
 
 
@@ -29,7 +29,7 @@ cover: https://files.zzzhxxx.top/img/586c1c0fe0c52d9a4678495c45177.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/586c1c0fe0c52d9a4678495c45177-01.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/586c1c0fe0c52d9a4678495c45177-01.jpg)
 
 
 

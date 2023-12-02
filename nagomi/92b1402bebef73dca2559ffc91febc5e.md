@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description:                       merry Christmas.:*はじめまして、ナナブンノニジュウニの西條和です。兵庫県出身です。なごみんと呼ばれています。好きな食べ物はツ...
-cover: https://files.zzzhxxx.top/img/be3503ae7404d107893bb4874c2a0.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/be3503ae7404d107893bb4874c2a0.jpg 
 ---
 
 
@@ -15,7 +15,7 @@ cover: https://files.zzzhxxx.top/img/be3503ae7404d107893bb4874c2a0.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/be3503ae7404d107893bb4874c2a0.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/be3503ae7404d107893bb4874c2a0.jpg)
 
 
 

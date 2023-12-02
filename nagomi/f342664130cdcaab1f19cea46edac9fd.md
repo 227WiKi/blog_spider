@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 前回のブログでは書ききれませんでしたが理解者のジャケット写真、MVが公開になりました！ふぁいふぁいします...
-cover: https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a18dfcbcb00475fb4c2e385741ae1.jpg 
 ---
 
 
@@ -43,7 +43,7 @@ cover: https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a18dfcbcb00475fb4c2e385741ae1.jpg)
 
 
 
@@ -52,7 +52,7 @@ cover: https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1-01.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a18dfcbcb00475fb4c2e385741ae1-01.jpg)
 
 
 
@@ -62,7 +62,7 @@ cover: https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1.jpg
 
 
 
-![](https://files.zzzhxxx.top/img/a18dfcbcb00475fb4c2e385741ae1-02.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/nagomi/a18dfcbcb00475fb4c2e385741ae1-02.jpg)
 
 
 

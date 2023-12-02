@@ -6,6 +6,7 @@ import time
 import urllib
 from bs4 import BeautifulSoup
 import hashlib
+from tqdm import tqdm
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
 url_base="https://blog.nanabunnonijyuuni.com/s/n227/diary/blog/list?ima=5649&page="
 suffix="&ct=04&cd=blog"
@@ -67,7 +68,6 @@ def get_inf():
     # print(title, authors, day, link, des)
 def get_img(i):
     filename = os.path.basename(i)
-    print(i)
     try:
         request=urllib.request.Request(i,headers=headers)
         response=urllib.request.urlopen(request)
@@ -97,13 +97,13 @@ def get_contents(links):
 
 def get_link(links):
     filename = os.path.basename(links)
-    l= 'https://files.zzzhxxx.top/img/' + filename
+    l= 'https://files.227wiki.eu.org/d/Backup/Blog/nagomi/' + filename
     return l
 if __name__ == "__main__":
-    for i in range(1):
+    for i in tqdm(range(32)):
         page=i
         get_inf()
-        for j in range(len(title)):
+        for j in tqdm(range(len(title))):
             name="nagomi-"+day[j]+'-'+title[j]
             md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
             with open(os.getcwd()+"/nagomi/"+md+".md","w",encoding='utf-8') as f:
@@ -117,7 +117,7 @@ if __name__ == "__main__":
                         f.write("cover: "+get_link(cover[j])+"\n")
                 f.write("---\n")
                 f.write(get_contents(link[j])) 
-    for i in cover:
+    for i in tqdm(cover):
         if i !=' ':
             get_img(i)
              
