@@ -6,10 +6,10 @@ categories:
 - 成员博客
 - 天城サリー
 description: どうもこんにちは！ご無沙汰しております。天城サリーです🌸二日も配信しないとなんか寂しいね。。でも心を強く持ちます！なんてったって明日はみんなに池袋で会えるから！！！れいにゃんとの引退集いです。二人...
-cover: https://files.zzzhxxx.top/img/mob6bnjni.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/sally/mob6bnjni.jpg 
 ---
-![](https://files.zzzhxxx.top/img/mob6bnjni.jpg)
-![](https://files.zzzhxxx.top/img/mobBw3tW8.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mob6bnjni.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobBw3tW8.jpg)
 
 どうもこんにちは！
 

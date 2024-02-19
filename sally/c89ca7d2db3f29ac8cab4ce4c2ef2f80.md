@@ -6,10 +6,10 @@ categories:
 - 成员博客
 - 天城サリー
 description: あいなっち！！HAPPY BIRTHDAY!!! ❤️💗㊗️🍩もう始めてのあいなっちの誕生日から一年か〜 早いな〜いつも笑顔で優しいあいなっちが大好きです！本当にあいなっちはサリーが尊敬する努力家だよ！去年色々なレッス...
-cover: https://files.zzzhxxx.top/img/mobBqEtK0.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/sally/mobBqEtK0.jpg 
 ---
-![](https://files.zzzhxxx.top/img/mobBqEtK0.jpg)
-![](https://files.zzzhxxx.top/img/mobdy9NzL.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobBqEtK0.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobdy9NzL.jpg)
 
 
 

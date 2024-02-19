@@ -6,11 +6,11 @@ categories:
 - 成员博客
 - 天城サリー
 description: 本日ご紹介したい推しメンがおります！この方です！ジャジャン〜😍可愛いな〜性格も良くて面白いし🤣前世でどんないいことをすればこんな完璧に生まれてこれるんだろう...あ、ちなみに、その子の隣にいるのが倉岡...
-cover: https://files.zzzhxxx.top/img/mobvJRc8s.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/sally/mobvJRc8s.jpg 
 ---
-![](https://files.zzzhxxx.top/img/mobvJRc8s.jpg)
-![](https://files.zzzhxxx.top/img/mobNCS9a5.jpg)
-![](https://files.zzzhxxx.top/img/mobasn5fI.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobvJRc8s.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobNCS9a5.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobasn5fI.jpg)
 
 本日ご紹介したい推しメンがおります！
 

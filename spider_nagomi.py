@@ -77,18 +77,37 @@ def get_img(i):
         pass
 def get_contents(links):
     global image
+    gmail = False
     data=requests.get(links,headers=headers)
     bs=BeautifulSoup(data.text,"html.parser")
     tweet =bs.find('div', class_="btnTweet")
     if tweet:
         bs.find('div', class_="btnTweet").decompose()
-    blog_contents=bs.find('div',class_="blog_detail__main")
-    img =blog_contents.find_all('img')
+    blog_contents = bs.find('div',class_='gmail_quote')
+    if blog_contents:
+        gmail = True
+        div_tags = blog_contents.find_all('div', attrs={'class': None})
+        for div_tag in div_tags:
+            img_tags = div_tag.find_all('img')
+            for img_tag in img_tags:
+                div_tag.insert_after(img_tag)
+            div_tag.extract()
+        img = blog_contents.find_all('img')
+    else: 
+        blog_contents=bs.find('div',class_="blog_detail__main")
+        img =blog_contents.find_all('img')
     if img:
+        if gmail:
+            for i in img:
+                l='https://blog.nanabunnonijyuuni.com'+i["src"]
+                get_img(l)
+                blog_contents=str(blog_contents).replace("<br/>","<br/>\n")
+                blog_contents=blog_contents.replace('<img src="' + i["src"] + '" style="max-width: 100%;"/>',"![]("+get_link(l)+')')
         for i in img:
             l='https://blog.nanabunnonijyuuni.com'+i["src"]
             get_img(l)
             blog_contents=str(blog_contents).replace("</img>"," ")
+            blog_contents=blog_contents.replace("<br/>","<br/>\n")
             blog_contents=blog_contents.replace('<img src="' + i["src"] + '">',"![]("+get_link(l)+')')
         tr=BeautifulSoup(blog_contents,"html.parser")
         return tr.text
@@ -100,7 +119,7 @@ def get_link(links):
     l= 'https://files.227wiki.eu.org/d/Backup/Blog/nagomi/' + filename
     return l
 if __name__ == "__main__":
-    for i in tqdm(range(32)):
+    for i in tqdm(range(1)):
         page=i
         get_inf()
         for j in tqdm(range(len(title))):
@@ -117,8 +136,8 @@ if __name__ == "__main__":
                         f.write("cover: "+get_link(cover[j])+"\n")
                 f.write("---\n")
                 f.write(get_contents(link[j])) 
-    for i in tqdm(cover):
-        if i !=' ':
-            get_img(i)
+    # for i in tqdm(cover):
+    #     if i !=' ':
+    #         get_img(i)
              
 

@@ -6,12 +6,12 @@ categories:
 - 成员博客
 - 天城サリー
 description: どうみ〜 かなえるの盗撮写真をメンバー1持っている自信があります！天城サリーです。サリーの今の壁紙はかなえるの彼女感溢れる一枚です(昨日撮ったので撮れたてほやほや温かいお芋です)あ〜美しい謎にモザイク...
-cover: https://files.zzzhxxx.top/img/mob3p3xr7.jpg 
+cover: https://files.227wiki.eu.org/d/Backup/Blog/sally/mob3p3xr7.jpg 
 ---
-![](https://files.zzzhxxx.top/img/mob3p3xr7.jpg)
-![](https://files.zzzhxxx.top/img/mobwiICQF.jpg)
-![](https://files.zzzhxxx.top/img/mobiKCOef.jpg)
-![](https://files.zzzhxxx.top/img/mob0Tw2SO.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mob3p3xr7.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobwiICQF.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mobiKCOef.jpg)
+![](https://files.227wiki.eu.org/d/Backup/Blog/sally/mob0Tw2SO.jpg)
 
 どうみ〜 かなえるの盗撮写真をメンバー1持っている自信があります！天城サリーです。
 
