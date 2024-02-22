@@ -22,11 +22,12 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 - [x] 雨夜音
 - [x] 清井美那
 - [x] 麻丘真央
+- [x] 望月りの
 - [ ] 相川奈央
 - [ ] 椎名桜月
 - [ ] 四条月
 - [ ] 月城咲舞
-- [ ] 望月りの
+
 
 # Require
 - Python >= 3.8
