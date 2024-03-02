@@ -1,0 +1,16 @@
+---
+title: チョコっとトーク会🍫ありがとうございました🎀
+date: 2022-04-03
+tags: 相川奈央
+categories: 
+- 成员博客
+- 相川奈央
+description: 昨日行われたチョコっとトーク会、来てくださった方々本当にありがとうございました😭💕          機械もあんまり得意じゃないし、はじめましての人とお話しするのも得意じゃない私なので、あんまり上...
+cover: https://files.227wiki.eu.org/d/Backup/Blog/nao/mobfA7u60.jpg 
+---
+<div class="blog_detail__main">
+<span style="word-spacing:1px;color:rgb(49,49,49)">昨日行われたチョコっとトーク会、</span><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">来てくださった方々本当にありがとうございました😭💕</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">機械もあんまり得意じゃないし、はじめましての人とお話しするのも得意じゃない私なので、</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">あんまり上手にできなかった気もちょっとしてます🥺</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">ちゃんと皆さんを楽しませられたかな、、？🥲</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">今度のオンライントーク会ではしっかり話せるようにもっともっとシミュレーションします💪🏻❤️‍🔥</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="word-spacing:1px;color:rgb(49,49,49)"><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div></div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">でも私はすごく楽しかったです🥰</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">たくさんの方が来てくださって、</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">中には</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">何人か連続で循環バス踊ってくださった方々❤️</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">イラスト描いてくださった方々✍🏻</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">うちわ持ってきてくださった方々👩🏻</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">おみくじ見せてくださった方々🥠</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">ねこちゃん、わんちゃん連れてきてくださった方々🐈🐕</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">いろんな方法で楽しませてくれて本当に嬉しかったです😭💕</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">たくさんの人がさまざまな地域から来て下さって、なんとも言えない喜びが込み上げてきました😌</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">そんな皆さんの期待に応えたいなぁ、、🥺🥺</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">9thではもっとちゃんと喋れるように練習してくるよっ❤️‍🔥</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)">だからまたなおてゃんに会いに来てくれると嬉しいです、、、☺️💓 えへへ🙈</div><div>　</div><div dir="auto" style="font-size:1rem;word-spacing:1px;color:rgb(49,49,49)"><div><img src="https://files.227wiki.eu.org/d/Backup/Blog/nao/mobfA7u60.jpg" style="max-width: 100%;"/></div><br/></div>
+<!--twitter-->
+
+<!--//twitter-->
+</div>
