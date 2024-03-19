@@ -11,6 +11,9 @@ Preview of markdown files in [22/7 WiKi blog](https://github.com/227WiKi/blog)
 
 Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 
+> [!Important]
+> Due to the change of the domain, the script is no longer suitable to grab the latest contents. The new version will be a general spider to grab the contents from the official blog.
+
 # Updates
 
 - [x] 天城サリー
@@ -24,9 +27,9 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 - [x] 麻丘真央
 - [x] 望月りの
 - [x] 相川奈央
-- [ ] 椎名桜月
-- [ ] 四条月
-- [ ] 月城咲舞
+- [x] 椎名桜月
+- [x] 四条月
+- [x] 月城咲舞
 
 
 # Require
