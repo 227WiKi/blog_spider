@@ -9,9 +9,8 @@ import hashlib
 from tqdm import tqdm
 import re
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
-url_base="https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list?ima=5517&ct="
+url="https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list"
 page=0
-url=url_base+str(page)
 a=[]
 title=[]
 authors=[]
@@ -22,26 +21,26 @@ link=[]
 cover=[]
 image=[]
 def name_map(name):
-    if name == "sally":
-        return "a1"
-    if name == "nagomi":
-        return "a4"
-    if name == "moe":
-        return "a9"
-    if name == "uta":
-        return "a12"
-    if name == "nao":
-        return "a13"
-    if name == "mao":
-        return "a14"
-    if name == "satsuki":
-        return "a17"
-    if name == "luna":
-        return "a18"
-    if name == "emma":
-        return "a19"
-    if name == "rino":
-        return "a20"
+    if name == "天城サリー":
+        return "sally"
+    if name == "河瀬詩":
+        return "uta"
+    if name == "西條和":
+        return "nagomi"
+    if name == "涼花萌":
+        return "moe"
+    if name == "相川奈央":
+        return "nao"
+    if name == "麻丘真央":
+        return "mao"
+    if name == "椎名桜月":
+        return "satsuki"
+    if name == "四条月":
+        return "luna"
+    if name == "月城咲舞":
+        return "emma"
+    if name == "望月りの":
+        return "rino"
 def get_inf():
     global title
     global authors
@@ -54,7 +53,6 @@ def get_inf():
     day=[]
     des=[]
     link=[]
-    url=url_base+str(page)+suffix
     data=requests.get(url,headers=headers)
     bs=BeautifulSoup(data.text,"html.parser")
     blog_title=bs.find_all('div',class_="blog-list__title")
@@ -87,16 +85,16 @@ def get_inf():
             thumb =thumb.replace(");"," ")
             cover.insert(0,thumb)
     # print(title, authors, day, link, des)
-def get_img(i):
+def get_img(i,author):
     filename = os.path.basename(i)
     try:
         request=urllib.request.Request(i,headers=headers)
         response=urllib.request.urlopen(request)
-        with open(os.getcwd()+"/nagomi/images/"+filename, "wb+") as f:
+        with open(os.getcwd()+"/"+author+"/images/"+filename, "wb+") as f:
             f.write(response.read())
     except:
         pass
-def get_contents(links):
+def get_contents(links,author):
     global image
     data=requests.get(links,headers=headers)
     bs=BeautifulSoup(data.text,"html.parser")
@@ -116,27 +114,27 @@ def get_contents(links):
     img = blog_contents.find_all('img')
     if img:
         for i in img:
-            l='https://blog.nanabunnonijyuuni.com'+i["src"]
-            # get_img(l)
-            blog_contents=str(blog_contents).replace('src="'+i["src"]+'"','src="'+get_link(l)+'"')
+            l='https://nanabunnonijyuuni-mobile.com'+i["src"]
+            get_img(l,author)
+            blog_contents=str(blog_contents).replace('src="'+i["src"]+'"','src="'+get_link(l,author)+'"')
         return blog_contents
     else:
         return str(blog_contents)
-def get_link(links):
+def get_link(links,folder):
     filename = os.path.basename(links)
-    l= 'https://files.227wiki.eu.org/d/Backup/Blog/nagomi/' + filename
+    l= 'https://files.227wiki.eu.org/d/Backup/Blog/'+folder+ "/" + filename
     return l
+def get_list():
+    # TODO: wait for the second page
+    return 1
 if __name__ == "__main__":
-    member=input("enter the name of the member(example: nagomi): ")
-    num=name_map(member)
-    url = url_base + num
-    for i in tqdm(range(1)):
+    for i in tqdm(range(get_list())):
         page=i
         get_inf()
         for j in tqdm(range(len(title))):
-            name="nagomi-"+day[j]+'-'+title[j]
+            name=name_map(authors[j])+"-"+day[j]+'-'+title[j]
             md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
-            with open(os.getcwd()+"/nagomi/"+md+".md","w",encoding='utf-8') as f:
+            with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md","w",encoding='utf-8') as f:
                 f.write("---\n")
                 f.write("title: "+title[j]+"\n")
                 f.write("date: "+day[j]+"\n")
@@ -144,8 +142,9 @@ if __name__ == "__main__":
                 f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
                 f.write("description: "+des[j]+"\n")
                 if cover[j] != " ":
-                        f.write("cover: "+get_link(cover[j])+"\n")
+                        f.write("cover: "+get_link(cover[j],name_map(authors[j]))+"\n")
                 f.write("---\n")
-                f.write(get_contents(link[j])) 
-             
-
+                f.write(get_contents("https://nanabunnonijyuuni-mobile.com"+link[j],name_map(authors[j]))) 
+            with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md", 'r', encoding='utf-8') as f1,open(os.getcwd()+"/updates/"+md+".md", "w", encoding="utf-8") as f2:
+                content=f1.read()
+                f2.write(content)
