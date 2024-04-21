@@ -9,7 +9,7 @@ import hashlib
 from tqdm import tqdm
 import re
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
-url="https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list"
+url="https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list?page=0"
 page=0
 a=[]
 title=[]
@@ -41,6 +41,14 @@ def name_map(name):
         return "emma"
     if name == "望月りの":
         return "rino"
+def clear_folder(folder_path):
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            clear_folder(file_path)
+            os.rmdir(file_path)
 def get_inf():
     global title
     global authors
@@ -85,6 +93,14 @@ def get_inf():
             thumb =thumb.replace(");"," ")
             cover.insert(0,thumb)
     # print(title, authors, day, link, des)
+def check_last_page():
+    data=requests.get(url,headers=headers)
+    bs=BeautifulSoup(data.text,"html.parser")
+    blog_pages=bs.find_all('ul',class_="blog-list clearfix")
+    if "記事がありません。" in str(blog_pages):
+        return False
+    else:
+        return True    
 def get_img(i,author):
     filename = os.path.basename(i)
     try:
@@ -125,15 +141,37 @@ def get_link(links,folder):
     l= 'https://files.227wiki.eu.org/d/Backup/Blog/'+folder+ "/" + filename
     return l
 def get_list():
-    # TODO: wait for the second page
-    return 1
+    num=0
+    global url
+    while(check_last_page()):
+        num = num + 1
+        url = "https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list?page="+str(num)
+    return num
 if __name__ == "__main__":
     for i in tqdm(range(get_list())):
         page=i
+        url = "https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list?page="+str(page)
         get_inf()
         for j in tqdm(range(len(title))):
             name=name_map(authors[j])+"-"+day[j]+'-'+title[j]
             md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
+            if i == 0 and j == 0:
+                with open(os.getcwd()+"/latest","r",encoding='utf-8') as f:
+                    last=f.read()
+                    if last == md:
+                        f.close()
+                        print("\n No new blog posts found. Exiting...")
+                        sys.exit()
+                    else:
+                        needUpdate = True
+                        clear_folder(os.getcwd()+"/updates")
+                        f.close()
+                if needUpdate:
+                    with open(os.getcwd()+"/latest","w",encoding='utf-8') as f:
+                        f.truncate(0)
+                        f.write(md)
+                        f.close()
+            
             with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md","w",encoding='utf-8') as f:
                 f.write("---\n")
                 f.write("title: "+title[j]+"\n")
