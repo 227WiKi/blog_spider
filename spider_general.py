@@ -20,6 +20,7 @@ des=[]
 link=[]
 cover=[]
 image=[]
+last=""
 def name_map(name):
     if name == "天城サリー":
         return "sally"
@@ -152,10 +153,10 @@ if __name__ == "__main__":
         page=i
         url = "https://nanabunnonijyuuni-mobile.com/s/n110/diary/official_blog/list?page="+str(page)
         get_inf()
-        for j in tqdm(range(len(title))):
+        for j in tqdm(range(len(title)-1, -1, -1)):
             name=name_map(authors[j])+"-"+day[j]+'-'+title[j]
             md=hashlib.md5(name.encode(encoding='UTF-8')).hexdigest()
-            if i == 0 and j == 0:
+            if i == 0 and j == len(title)-1:
                 with open(os.getcwd()+"/latest","r",encoding='utf-8') as f:
                     last=f.read()
                     if last == md:
@@ -171,18 +172,21 @@ if __name__ == "__main__":
                         f.truncate(0)
                         f.write(md)
                         f.close()
-            
-            with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md","w",encoding='utf-8') as f:
-                f.write("---\n")
-                f.write("title: "+title[j]+"\n")
-                f.write("date: "+day[j]+"\n")
-                f.write("tags: "+authors[j]+"\n")
-                f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
-                f.write("description: "+des[j]+"\n")
-                if cover[j] != " ":
-                        f.write("cover: "+get_link(cover[j],name_map(authors[j]))+"\n")
-                f.write("---\n")
-                f.write(get_contents("https://nanabunnonijyuuni-mobile.com"+link[j],name_map(authors[j]))) 
-            with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md", 'r', encoding='utf-8') as f1,open(os.getcwd()+"/updates/"+md+".md", "w", encoding="utf-8") as f2:
-                content=f1.read()
-                f2.write(content)
+            if last == md:
+                print("\n No new blog posts found. Exiting...")
+                sys.exit()
+            else:
+                with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md","w",encoding='utf-8') as f:
+                    f.write("---\n")
+                    f.write("title: "+title[j]+"\n")
+                    f.write("date: "+day[j]+"\n")
+                    f.write("tags: "+authors[j]+"\n")
+                    f.write("categories: \n- 成员博客\n- "+authors[j]+"\n")
+                    f.write("description: "+des[j]+"\n")
+                    if cover[j] != " ":
+                            f.write("cover: "+get_link(cover[j],name_map(authors[j]))+"\n")
+                    f.write("---\n")
+                    f.write(get_contents("https://nanabunnonijyuuni-mobile.com"+link[j],name_map(authors[j]))) 
+                with open(os.getcwd()+"/"+name_map(authors[j])+"/"+md+".md", 'r', encoding='utf-8') as f1,open(os.getcwd()+"/updates/"+md+".md", "w", encoding="utf-8") as f2:
+                    content=f1.read()
+                    f2.write(content)
