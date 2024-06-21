@@ -107,7 +107,9 @@ def get_img(i,author):
     try:
         request=urllib.request.Request(i,headers=headers)
         response=urllib.request.urlopen(request)
-        with open(os.getcwd()+"/"+author+"/images/"+filename, "wb+") as f:
+        if not os.path.exists(os.getcwd()+"/updates/"+author):
+            os.mkdir(os.getcwd()+"/updates/"+author)
+        with open(os.getcwd()+"/updates/"+author+"/"+filename, "wb+") as f:
             f.write(response.read())
     except:
         pass
