@@ -35,25 +35,42 @@ jobs:
         SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
       run: python main.py
 
-    - name: Push to Blog Content Repository
-      # Only run if blog_output exists and is not empty
-      if: hashFiles('blog_output/**/*') != ''
-      uses: cpina/github-action-push-to-another-repository@main
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+   # ... (前面的步骤不变: Checkout, Python setup, Install, Run Scraper) ...
+
+    # [删除] 原来的 'Push to Blog Content Repository' 使用 cpina action 的那一段
+    # [新增] 下面这三步来实现安全的增量推送：
+
+    - name: Checkout Target Blog Repository
+      uses: actions/checkout@v4
       with:
-        source-directory: 'blog_output'
+        repository: '227WiKi/blog'
+        token: ${{ secrets.API_TOKEN_GITHUB }}
+        path: target_repo
+        ref: master 
+
+    - name: Copy and Merge Files
+      run: |
+        mkdir -p target_repo/source/_posts
         
-        # [IMPORTANT] MODIFY THESE TWO LINES
-        destination-github-username: '227WiKi'
-        destination-repository-name: 'blog'
+        cp -r -v blog_output/* target_repo/source/_posts/
         
-        user-email: 'zhxsend@gmail.com'
-        user-name: 'zzzhxxx'
-        target-branch: master
+        echo "Files copied successfully."
+
+    - name: Commit and Push Changes
+      working-directory: target_repo  
+      run: |
+        git config user.name "22/7 WiKi Blog Bot"
+        git config user.email "zhxsend@gmail.com"
         
-        # The folder inside your blog repo where posts should go
-        target-directory: 'source/_posts'
+        git add source/_posts
+        
+        if git diff --staged --quiet; then
+          echo "No changes to commit (No new posts)."
+        else
+          echo "New posts detected. Committing..."
+          git commit -m "feat: auto-add new blog posts via scraper"
+          git push origin main
+        fi
 
     - name: Update Progress Hash
       # Commit the 'latest' file back to this repo so next run knows where to start
