@@ -1,0 +1,70 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # Every 6 hours
+  workflow_dispatch:      # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Scraper Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Scraper (main.py)
+      env:
+        # Map GitHub Secrets to Environment Variables
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
+      run: python main.py
+
+    - name: Push to Blog Content Repository
+      # Only run if blog_output exists and is not empty
+      if: hashFiles('blog_output/**/*') != ''
+      uses: cpina/github-action-push-to-another-repository@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'blog_output'
+        
+        # [IMPORTANT] MODIFY THESE TWO LINES
+        destination-github-username: '227WiKi'
+        destination-repository-name: 'blog'
+        
+        user-email: 'zhxsend@gmail.com'
+        user-name: 'zzzhxxx'
+        target-branch: master
+        
+        # The folder inside your blog repo where posts should go
+        target-directory: 'source/_posts'
+
+    - name: Update Progress Hash
+      # Commit the 'latest' file back to this repo so next run knows where to start
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "action@github.com"
+        # Check if 'latest' file has changed
+        if [[ -n $(git status --porcelain latest) ]]; then
+          git add latest
+          git commit -m "chore: update scrape progress [skip ci]"
+          git push
+        else
+          echo "No progress update needed."
+        fi
