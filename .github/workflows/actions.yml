@@ -2,7 +2,7 @@ name: Daily Update
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # Every 6 hours
+    - cron: '0 */12 * * *' 
   workflow_dispatch:      # Allow manual trigger
 
 permissions:
@@ -52,7 +52,7 @@ jobs:
       run: |
         mkdir -p target_repo/source/_posts
         
-        cp -r -v blog_output/* target_repo/source/_posts/
+        cp -r -v blog_output/. target_repo/source/_posts/
         
         echo "Files copied successfully."
 
