@@ -82,8 +82,8 @@ jobs:
     - name: Update Progress Hash
       # Commit the 'latest' file back to this repo so next run knows where to start
       run: |
-        git config --global user.name "GitHub Action Bot"
-        git config --global user.email "action@github.com"
+        git config --global user.name "22/7 WiKi Bot"
+        git config --global user.email "bot@227wiki.eu.org"
         # Check if 'latest' file has changed
         if [[ -n $(git status --porcelain latest) ]]; then
           git add latest
