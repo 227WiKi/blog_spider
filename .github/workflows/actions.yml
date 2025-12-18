@@ -35,10 +35,6 @@ jobs:
         SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
       run: python main.py
 
-   # ... (前面的步骤不变: Checkout, Python setup, Install, Run Scraper) ...
-
-    # [删除] 原来的 'Push to Blog Content Repository' 使用 cpina action 的那一段
-    # [新增] 下面这三步来实现安全的增量推送：
 
     - name: Checkout Target Blog Repository
       uses: actions/checkout@v4
@@ -57,10 +53,10 @@ jobs:
         echo "Files copied successfully."
 
     - name: Commit and Push Changes
-      working-directory: target_repo  
+      working-directory: target_repo
       run: |
-        git config user.name "22/7 WiKi Blog Bot"
-        git config user.email "zhxsend@gmail.com"
+        git config user.name "22/7 WiKi Bot"
+        git config user.email "bot@227wiki.eu.org"
         
         git add source/_posts
         
@@ -68,8 +64,19 @@ jobs:
           echo "No changes to commit (No new posts)."
         else
           echo "New posts detected. Committing..."
-          git commit -m "feat: auto-add new blog posts via scraper"
-          git push origin main
+          
+          if [ -f ../authors.txt ]; then
+             AUTHOR_LIST=$(cat ../authors.txt)
+             COMMIT_MSG="feat: add new posts by $AUTHOR_LIST"
+          else
+             COMMIT_MSG="feat: auto-add new blog posts via scraper"
+          fi
+          
+          echo "Commit Message: $COMMIT_MSG"
+          
+          git commit -m "$COMMIT_MSG"
+          
+          git push origin HEAD:master
         fi
 
     - name: Update Progress Hash

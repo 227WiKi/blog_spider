@@ -49,8 +49,10 @@ class BlogScraper:
         self.output_root = os.path.join(self.base_dir, "blog_output")
         self.updates_dir = os.path.join(self.base_dir, "updates")
         self.new_posts_count = 0
+        # [新增] 用于记录本次更新的作者
+        self.updated_authors = set()
         
-        # Initialize OneDrive Client and Connect
+        # Initialize OneDrive Client
         self.onedrive = OneDriveClient()
         print("[INFO] Initializing OneDrive connection...")
         if not self.onedrive.connect():
@@ -95,10 +97,8 @@ class BlogScraper:
         return posts
 
     def handle_image(self, url, author_en):
-        """Downloads locally then uploads via OneDrive client."""
         if not url.startswith("http"): return
         filename = os.path.basename(url)
-        
         save_dir = os.path.join(self.updates_dir, author_en)
         os.makedirs(save_dir, exist_ok=True)
         save_path = os.path.join(save_dir, filename)
@@ -110,10 +110,8 @@ class BlogScraper:
                     with open(save_path, 'wb') as f:
                         for chunk in r.iter_content(1024):
                             f.write(chunk)
-                    
                     if not self.onedrive.upload_file(save_path, author_en):
                         print(f"[WARN] Failed to upload image: {filename}")
-
             except Exception as e:
                 print(f"[ERROR] Image process failed: {e}")
 
@@ -161,12 +159,11 @@ class BlogScraper:
             f"{content_html}"
         )
 
-        # [Modified] No longer separate by author folder, save directly to output root
-        # author_dir = os.path.join(self.output_root, post.author_en)
         os.makedirs(self.output_root, exist_ok=True)
         with open(os.path.join(self.output_root, filename), 'w', encoding='utf-8') as f:
             f.write(md_content)
         self.new_posts_count += 1
+        self.updated_authors.add(post.author_raw)
 
     def run(self):
         last_hash = ""
@@ -182,7 +179,6 @@ class BlogScraper:
 
         print(f"=== 22/7 Blog Scraper Started ===")
         print(f"Target OneDrive Path: {self.onedrive.root_folder_path}")
-        print(f"Last hash: {last_hash if last_hash else 'None (Full Scrape)'}")
         
         page = 0
         new_latest_hash = None
@@ -195,10 +191,10 @@ class BlogScraper:
                 break
 
             for post in tqdm(
-                posts,
-                desc=f"Page {page}",
+                posts, 
+                desc=f"Page {page}", 
                 unit="post",
-                ncols=100,  
+                ncols=100,
                 bar_format='{l_bar}{bar:30}| {n_fmt}/{total_fmt} [{elapsed}]'
             ):
                 current_hash = post.get_id()
@@ -206,9 +202,14 @@ class BlogScraper:
                 if last_hash and current_hash == last_hash:
                     tqdm.write(f"\n[INFO] Reached previous hash: {post.title}. Stopping.")
                     
-                    if has_new_posts and new_latest_hash:
-                        with open(self.latest_file, 'w', encoding='utf-8') as f:
-                            f.write(new_latest_hash)
+                    if has_new_posts:
+                        if self.updated_authors:
+                            with open("authors.txt", "w", encoding="utf-8") as f:
+                                f.write(", ".join(sorted(self.updated_authors)))
+
+                        if new_latest_hash:
+                            with open(self.latest_file, 'w', encoding='utf-8') as f:
+                                f.write(new_latest_hash)
                         print("[INFO] Latest hash updated locally.")
                     else:
                         print("[INFO] No new posts found.")
@@ -216,18 +217,21 @@ class BlogScraper:
 
                 if new_latest_hash is None: new_latest_hash = current_hash
                 
-                # [Added] Print Title and Author for each post
                 tqdm.write(f"[SCRAPING] {post.title} ({post.author_raw})")
-                
                 content = self.process_content(post)
                 self.save_markdown(post, content)
                 has_new_posts = True
             
             page += 1
 
-        if has_new_posts and new_latest_hash:
-            with open(self.latest_file, 'w', encoding='utf-8') as f:
-                f.write(new_latest_hash)
+        if has_new_posts:
+            if self.updated_authors:
+                with open("authors.txt", "w", encoding="utf-8") as f:
+                    f.write(", ".join(sorted(self.updated_authors)))
+                    
+            if new_latest_hash:
+                with open(self.latest_file, 'w', encoding='utf-8') as f:
+                    f.write(new_latest_hash)
             print(f"\n[INFO] Full scrape complete. New posts: {self.new_posts_count}")
 
 if __name__ == "__main__":
