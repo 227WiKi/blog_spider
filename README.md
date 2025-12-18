@@ -1,7 +1,6 @@
 # 22/7 Spider
-------
 
-# About
+## About
 
 A spider to get all the articles and images from 22/7 members' blogs and convert them into markdown files that can be used in hexo.
 
@@ -11,10 +10,7 @@ Preview of markdown files in [22/7 WiKi blog](https://github.com/227WiKi/blog)
 
 Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 
-> [!Important]
-> Due to the change of the domain, the script is no longer suitable to grab the latest contents. The new version will be a general spider to grab the contents from the official blog.
-
-# Updates
+## Updates
 
 - [x] 天城サリー
 - [x] 河瀬詩
@@ -30,18 +26,61 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 - [x] 椎名桜月
 - [x] 四条月
 - [x] 月城咲舞
+- [x] 折本美玲
+- [x] 北原実咲
+- [x] 黒崎ありす
+- [x] 橘茉奈
+- [x] 桧山依子
+- [x] 三雲遥加
+- [x] 南伊織
+- [x] 吉沢珠璃
 
+## Require
 
-# Require
 - Python >= 3.8
 - requests
 - BeautifulSoup
-# Usage
-create the folder named by members' names and a folder called images inside it.
+- tqdm
+- python-dotenv
 
-``python -m spider_[replace with member's name].py``
+## Usage
 
-> You may need to change the number of pages the program crawls at a time, which may cause the program to crash.
+### Install requirements
+
+```
+pip install -r requirements.txt
+```
+
+### Setup OneDrive Account
+
+1. Go to your Azure Dashboard and create an application
+2. Fill in Client ID and Tenant ID into `.env`
+3. Create a secret at Certificates & secrets for the application and fill the secrect into the `.env`
+4. Go to API permissions and add permissions for `Files.ReadWrite.All`, `Sites.ReadWrite.All` with Application permissions
+5. Press Grant admin consent for your orgniazation while the status shows green marks
+
+#### Sample .env
+
+```
+AZURE_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AZURE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+AZURE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+SHAREPOINT_SITE_URL=https://<orginazation name>-my.sharepoint.com/personal/<username>_<domain>
+```
+
+### Test OneDrive connection
+
+```
+python test_onedrive.py
+```
+
+### Get blogs
+
+```
+python main.py
+```
 
 # License
 
