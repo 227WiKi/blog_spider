@@ -3,7 +3,7 @@ name: Validate R2 Migration
 on:
   push:
     branches:
-      - codex/r2-action-validation
+      - codex/cloudflare-r2
   workflow_dispatch:
 
 permissions:
