@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 涼花萌
 description: ななばんは〜〜！握手会の日のお手紙とプレゼント受け取りました〜〜(*^o^*)ありがとう💓お手紙入れのカンカンがもうすぐぱんぱんになる〜〜☺️次は、お手紙...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/moe/2e49d8472c58ea85d63754afaee20.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/moe/2e49d8472c58ea85d63754afaee20.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -63,7 +63,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/moe/2e49d8472c58ea85d63754afae
 <br/>
 <br/>
 🐰めいち🐰<br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/moe/2e49d8472c58ea85d63754afaee20.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/moe/2e49d8472c58ea85d63754afaee20.jpg"><br/>
 <br/>
 <br/>
 <br/>

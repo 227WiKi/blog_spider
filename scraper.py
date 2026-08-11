@@ -8,7 +8,12 @@ from bs4 import BeautifulSoup
 from dataclasses import dataclass
 from urllib.parse import urljoin
 from tqdm import tqdm
-from onedrive_client import OneDriveClient
+from blog_resource_urls import (
+    build_blog_resource_url,
+    encode_blog_resource_path,
+    source_filename,
+)
+from r2_client import R2Client
 
 # Constants
 BASE_URL = "https://nanabunnonijyuuni-mobile.com"
@@ -40,7 +45,7 @@ class BlogPost:
         return hashlib.md5(raw_str.encode('utf-8')).hexdigest()
 
 class BlogScraper:
-    def __init__(self):
+    def __init__(self, storage_client=None):
         self.session = requests.Session()
         self.session.headers.update(HEADERS)
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -49,14 +54,15 @@ class BlogScraper:
         self.output_root = os.path.join(self.base_dir, "blog_output")
         self.updates_dir = os.path.join(self.base_dir, "updates")
         self.new_posts_count = 0
+        self.uploaded_resources = set()
         # [新增] 用于记录本次更新的作者
         self.updated_authors = set()
         
-        # Initialize OneDrive Client
-        self.onedrive = OneDriveClient()
-        print("[INFO] Initializing OneDrive connection...")
-        if not self.onedrive.connect():
-            print("[ERROR] Failed to connect to OneDrive. Exiting.")
+        # R2 remains the uploader so generated URLs are never published first.
+        self.storage = storage_client or R2Client()
+        print("[INFO] Initializing Cloudflare R2 connection...")
+        if not self.storage.connect():
+            print("[ERROR] Failed to configure Cloudflare R2. Exiting.")
             sys.exit(1)
 
     def get_soup(self, url):
@@ -97,8 +103,15 @@ class BlogScraper:
         return posts
 
     def handle_image(self, url, author_en):
-        if not url.startswith("http"): return
-        filename = os.path.basename(url)
+        filename = source_filename(url)
+        if filename is None:
+            return None
+
+        relative_path = encode_blog_resource_path(author_en, filename)
+        public_url = build_blog_resource_url(relative_path)
+        if relative_path in self.uploaded_resources:
+            return public_url
+
         save_dir = os.path.join(self.updates_dir, author_en)
         os.makedirs(save_dir, exist_ok=True)
         save_path = os.path.join(save_dir, filename)
@@ -106,16 +119,25 @@ class BlogScraper:
         if not os.path.exists(save_path):
             try:
                 r = self.session.get(url, stream=True, timeout=20)
-                if r.status_code == 200:
-                    with open(save_path, 'wb') as f:
-                        for chunk in r.iter_content(1024):
-                            f.write(chunk)
-                    if not self.onedrive.upload_file(save_path, author_en):
-                        print(f"[WARN] Failed to upload image: {filename}")
+                r.raise_for_status()
+                with open(save_path, 'wb') as f:
+                    for chunk in r.iter_content(1024):
+                        f.write(chunk)
             except Exception as e:
-                print(f"[ERROR] Image process failed: {e}")
+                raise RuntimeError(f"Image download failed for {url}: {e}") from e
+
+        if not self.storage.upload_file(save_path, author_en):
+            raise RuntimeError(f"R2 upload failed for {relative_path}")
+
+        self.uploaded_resources.add(relative_path)
+        return public_url
 
     def process_content(self, post: BlogPost):
+        if post.cover.strip():
+            cover_link = self.handle_image(post.cover, post.author_en)
+            if cover_link:
+                post.cover = cover_link
+
         full_link = urljoin(BASE_URL, post.link)
         soup = self.get_soup(full_link)
         if not soup: return ""
@@ -131,12 +153,9 @@ class BlogScraper:
             src = img.get('src')
             if src:
                 abs_src = urljoin(BASE_URL, src)
-                self.handle_image(abs_src, post.author_en)
-                new_link = f"https://files.227wiki.eu.org/d/Backup/Blog/{post.author_en}/{os.path.basename(abs_src)}"
-                img['src'] = new_link
-        
-        if post.cover.strip() != "":
-             self.handle_image(post.cover, post.author_en)
+                new_link = self.handle_image(abs_src, post.author_en)
+                if new_link:
+                    img['src'] = new_link
 
         return str(content_div)
 
@@ -145,7 +164,7 @@ class BlogScraper:
         filename = f"{post_id}.md"
         cover_link = ""
         if post.cover.strip():
-             cover_link = f"https://files.227wiki.eu.org/d/Backup/Blog/{post.author_en}/{os.path.basename(post.cover)}"
+             cover_link = post.cover
 
         md_content = (
             "---\n"
@@ -178,7 +197,7 @@ class BlogScraper:
         os.makedirs(self.updates_dir)
 
         print(f"=== 22/7 Blog Scraper Started ===")
-        print(f"Target OneDrive Path: {self.onedrive.root_folder_path}")
+        print(f"Target R2 Prefix: {self.storage.root_folder_path}")
         
         page = 0
         new_latest_hash = None

@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 話したいのに、何を話したら喜んでもらえるかわからなかった大好きなのに、いつか...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/3ecd00c92df58007e0989d952ed18.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/3ecd00c92df58007e0989d952ed18.jpg 
 ---
 <div class="blog_detail__main">
         ﻿<br/>
@@ -703,7 +703,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/3ecd00c92df58007e0989d9
 <br/>
 とう。<br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/3ecd00c92df58007e0989d952ed18.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/3ecd00c92df58007e0989d952ed18.jpg"><br/>
 <br/>
 <br/>
 <br/>
@@ -825,7 +825,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/3ecd00c92df58007e0989d9
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/3ecd00c92df58007e0989d952ed18-01.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/3ecd00c92df58007e0989d952ed18-01.jpg"><br/>
 <br/>
 <br/>
 <br/>

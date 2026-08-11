@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: だっっっ！しゅ〜ただいま5月31日22時50分なり。まだ、ぎり、...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/13c37202bcf0670caa14a6968e803.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/13c37202bcf0670caa14a6968e803.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -357,7 +357,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/13c37202bcf0670caa14a69
 ふぁい<br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/13c37202bcf0670caa14a6968e803.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/13c37202bcf0670caa14a6968e803.jpg"><br/>
 <br/>
 <br/>
 <br/>

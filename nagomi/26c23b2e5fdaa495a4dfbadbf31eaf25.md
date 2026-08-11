@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: どくんどくんシャワーです鼓動かのようにどくんどくん言ってますほんとに鼓動のごとく振動するんです...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2bd371bbc9c8a9b8ae9e0006f0f16.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/2bd371bbc9c8a9b8ae9e0006f0f16.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -233,7 +233,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2bd371bbc9c8a9b8ae9e000
 ふぁい<br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2bd371bbc9c8a9b8ae9e0006f0f16.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/2bd371bbc9c8a9b8ae9e0006f0f16.jpg"><br/>
 <br/>
 <br/>
 <br/>
