@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: えへへのへお姉ちゃんがフェイスマッサージとやらに行ってきたみたいで、紹介制度を使えば無料でできるからしてもらう？と誘ってもらい、はじめて...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3f6150f8629c3dd36e9e0be28d20.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/e3f6150f8629c3dd36e9e0be28d20.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -130,7 +130,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3f6150f8629c3dd36e9e0b
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/e3f6150f8629c3dd36e9e0be28d20.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/e3f6150f8629c3dd36e9e0be28d20.jpg"><br/>
 <br/>
 <br/>
 <br/>

@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 涼花萌
 description: ななばんは〜〜！かなしい…京都に帰りたい……ふぅちゃんこぉちゃんと一緒にいれないのが1番つらい〜〜😞久しぶりに友達に会ったり、おもろいテレビ番組見たり、楽しい年末...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/moe/07e7dca5bab580bf1dd153fd3e900.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/moe/07e7dca5bab580bf1dd153fd3e900.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -35,7 +35,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/moe/07e7dca5bab580bf1dd153fd3e
 <br/>
 <br/>
 お弁当！<br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/moe/07e7dca5bab580bf1dd153fd3e900.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/moe/07e7dca5bab580bf1dd153fd3e900.jpg"><br/>
 <br/>
 <br/>
 <br/>
@@ -54,7 +54,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/moe/07e7dca5bab580bf1dd153fd3e
 <br/>
 <br/>
 そ〜し〜て〜〜♡<br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/moe/07e7dca5bab580bf1dd153fd3e900-01.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/moe/07e7dca5bab580bf1dd153fd3e900-01.jpg"><br/>
 <br/>
 <br/>
 <br/>

@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: 日曜日の夜今年一年を一言で表すとそんな毎日でした2018年やり残したこと...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2e656ef7f212aa04667c56a61fac3.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/2e656ef7f212aa04667c56a61fac3.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -457,7 +457,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2e656ef7f212aa04667c56a
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/2e656ef7f212aa04667c56a61fac3.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/2e656ef7f212aa04667c56a61fac3.jpg"><br/>
 <br/>
 <br/>
 <br/>

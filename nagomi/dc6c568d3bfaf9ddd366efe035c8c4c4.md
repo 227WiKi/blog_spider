@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 西條和
 description: ふぁいからのふぁい。ミッフィーさんにおはまりちゅう。みなさんからのプレゼントでいただいたりで身...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c2cf28d.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/nagomi/7cccf912efc1771837d8f4c2cf28d.jpg 
 ---
 <div class="blog_detail__main">
         ﻿<br/>
@@ -16,13 +16,13 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c2cf28d.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/7cccf912efc1771837d8f4c2cf28d.jpg"><br/>
 <br/>
 <br/>
 ふぁいからの<br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c2cf28d-01.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/7cccf912efc1771837d8f4c2cf28d-01.jpg"><br/>
 <br/>
 <br/>
 <br/>
@@ -212,7 +212,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/nagomi/7cccf912efc1771837d8f4c2cf28d-02.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/nagomi/7cccf912efc1771837d8f4c2cf28d-02.jpg"><br/>
 <br/>
 <br/>
 <br/>

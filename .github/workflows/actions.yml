@@ -14,30 +14,48 @@ jobs:
 
     steps:
     - name: Checkout Scraper Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: '3.9'
+        cache: pip
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Run unit tests
+      env:
+        PYTHONDONTWRITEBYTECODE: '1'
+      run: python -m unittest discover -s tests -v
+
+    - name: Validate R2 credentials and bucket access
+      env:
+        R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+        R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+        R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+      run: python validate_r2.py
+
     - name: Run Scraper (main.py)
       env:
         # Map GitHub Secrets to Environment Variables
-        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-        SHAREPOINT_SITE_URL: ${{ secrets.SHAREPOINT_SITE_URL }}
+        R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+        R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+        R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        R2_ENDPOINT: ${{ vars.R2_ENDPOINT }}
+        BLOG_RESOURCE_BASE_URL: https://res.227wiki.eu.org/archive/blog
+        R2_BLOG_PREFIX: archive/blog
       run: python main.py
 
 
     - name: Checkout Target Blog Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: '227WiKi/blog'
         token: ${{ secrets.API_TOKEN_GITHUB }}

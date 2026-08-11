@@ -51,35 +51,66 @@ Updated from [227-blog-generator](https://github.com/zzzhxxx/227-blog-generator)
 pip install -r requirements.txt
 ```
 
-### Setup OneDrive Account
+### Configure Cloudflare R2
 
-1. Go to your Azure Dashboard and create an application
-2. Fill in Client ID and Tenant ID into `.env`
-3. Create a secret at Certificates & secrets for the application and fill the secrect into the `.env`
-4. Go to API permissions and add permissions for `Files.ReadWrite.All`, `Sites.ReadWrite.All` with Application permissions
-5. Press Grant admin consent for your orgniazation while the status shows green marks
+Create an R2 API token with Object Read & Write access to the blog resource
+bucket. The scraper uploads objects below `archive/blog/<author>/<filename>` and
+writes public URLs below `https://res.227wiki.eu.org/archive/blog`.
 
 #### Sample .env
 
 ```
-AZURE_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-AZURE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+R2_ACCOUNT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+R2_ACCESS_KEY_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+R2_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+R2_BUCKET_NAME=archive
 
-AZURE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-SHAREPOINT_SITE_URL=https://<orginazation name>-my.sharepoint.com/personal/<username>_<domain>
+# Optional overrides
+BLOG_RESOURCE_BASE_URL=https://res.227wiki.eu.org/archive/blog
+R2_BLOG_PREFIX=archive/blog
+# R2_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com
 ```
 
-### Test OneDrive connection
+`BLOG_RESOURCE_BASE_URL` is the single public URL setting. `R2_BLOG_PREFIX` is
+the object-key prefix inside the configured bucket; it is not included twice by
+the URL builder.
+
+### Test URL mapping and R2 signing
 
 ```
-python test_onedrive.py
+python -m unittest discover -s tests
 ```
+
+To validate the configured credentials and bucket without uploading, deleting,
+or changing any object, run:
+
+```
+python validate_r2.py
+```
+
+GitHub Actions also provides a read-only `Validate R2 Migration` workflow. A
+push to the `codex/r2-action-validation` branch runs the unit tests and the same
+R2 bucket check, but never runs the scraper or pushes generated posts to the
+blog repository.
 
 ### Get blogs
 
 ```
 python main.py
+```
+
+### Migrate legacy AList URLs
+
+The migration command is a dry-run unless `--write` is supplied. It only maps
+recognized `/d/Backup/Blog/<author>/<filename>` URLs and reports malformed
+legacy values without changing them.
+
+```
+python migrate_legacy_blog_urls.py . ../blog/source/_posts \
+  ../blog/_config.Acrylic.yml ../blog/_config.anzhiyu.yml
+
+python migrate_legacy_blog_urls.py --write . ../blog/source/_posts \
+  ../blog/_config.Acrylic.yml ../blog/_config.anzhiyu.yml
 ```
 
 # License

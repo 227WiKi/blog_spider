@@ -6,7 +6,7 @@ categories:
 - 成员博客
 - 望月りの
 description: 初めまして22/7新メンバーの望月りのです。元気!!笑顔!!りのち!!✨皆さんが、一緒にやってくれて嬉しかったです(*´艸`)22/7 LIVE TOUR 2022『14』横浜公演に足を運んでくださ...
-cover: https://files.227wiki.eu.org/d/Backup/Blog/rino/7402a76162c5eaf0092bd104cda87.jpg 
+cover: https://res.227wiki.eu.org/archive/blog/rino/7402a76162c5eaf0092bd104cda87.jpg 
 ---
 <div class="blog_detail__main">
 <br/>
@@ -22,7 +22,7 @@ cover: https://files.227wiki.eu.org/d/Backup/Blog/rino/7402a76162c5eaf0092bd104c
 <br/>
 <br/>
 <br/>
-<img src="https://files.227wiki.eu.org/d/Backup/Blog/rino/7402a76162c5eaf0092bd104cda87.jpg"><br/>
+<img src="https://res.227wiki.eu.org/archive/blog/rino/7402a76162c5eaf0092bd104cda87.jpg"><br/>
 <br/>
 <br/>
 <br/>
